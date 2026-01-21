@@ -1,0 +1,1971 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Organizing Committee | SITE-EMAR 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           1. CSS VARIABLES (RED & WHITE THEME)
+           ========================================= */
+        :root {
+            /* Primary Brand Colors */
+            --primary-red: #D32F2F;       
+            --dark-red: #B71C1C;          
+            --light-red: #FFEBEE;         
+            --accent-red: #FF5252;        
+            
+            /* Neutrals */
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #424242;
+            --text-dark: #212121;
+            --text-gray: #616161;
+            --black: #000000;
+
+            /* Shadows & Effects */
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.15);
+            --shadow-red: 0 10px 20px rgba(211, 47, 47, 0.2);
+            --glass: rgba(255, 255, 255, 0.95);
+
+            /* Typography */
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Merriweather', serif;
+
+            /* Transitions */
+            --trans-fast: 0.3s ease;
+            --trans-med: 0.5s ease;
+        }
+
+        /* =========================================
+           2. RESET & GLOBAL STYLES
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-heading);
+            background-color: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--trans-fast);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-red {
+            color: var(--primary-red);
+        }
+
+        .mt-20 { margin-top: 20px; }
+        .mt-40 { margin-top: 40px; }
+        .mb-20 { margin-bottom: 20px; }
+        .mb-40 { margin-bottom: 40px; }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-red);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-top: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* =========================================
+           3. ANIMATIONS
+           ========================================= */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes borderSlide {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* =========================================
+           4. NAVIGATION (Tubelight)
+           ========================================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: var(--trans-fast);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-item {
+            position: relative;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 8px var(--primary-red);
+        }
+
+        .nav-item:hover::before,
+        .nav-item.active::before {
+            width: 100%;
+        }
+
+        .nav-item.active {
+            color: var(--primary-red);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* =========================================
+           5. HERO BANNER - NO RED BACKGROUND
+           ========================================= */
+        .page-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(33, 33, 33, 0.75), rgba(0, 0, 0, 0.6)),
+                        url('https://plus.unsplash.com/premium_photo-1661746107725-5eec7679731c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29tbWl0dGVlfGVufDB8fDB8fHww');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--off-white), transparent);
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease-out;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .breadcrumb {
+            display: inline-flex;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            opacity: 0.8;
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            opacity: 0.5;
+        }
+
+        /* =========================================
+           6. UNIVERSITY CREST & PATRONS - BIGGER CARDS WITH IMAGES
+           ========================================= */
+        .patrons-section {
+            background: var(--white);
+            position: relative;
+            top: -50px;
+            z-index: 10;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto -50px;
+        }
+
+        .university-crest {
+            width: 220px;
+            max-width: 320px;
+            display: block;
+            margin: 0 auto 18px;
+            animation: scaleIn 0.8s ease;
+        }
+
+        .patrons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        /* BIGGER PATRON CARDS WITH IMAGE */
+        .patron-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--light-gray);
+            border-radius: 20px;
+            border: 2px solid var(--medium-gray);
+            transition: var(--trans-fast);
+        }
+
+        .patron-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-red);
+        }
+
+        .patron-image-wrapper {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--primary-red);
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.25);
+            background: var(--medium-gray);
+        }
+
+        .patron-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Placeholder for images - remove when adding real images */
+        .patron-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e0e0e0, #bdbdbd);
+            color: #757575;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .patron-role {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-red);
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: var(--light-red);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .patron-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .patron-designation {
+            font-size: 1rem;
+            color: var(--text-gray);
+            font-family: var(--font-body);
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           7. KEY ORGANIZERS (EXPANDABLE CARDS) - BIGGER IMAGES
+           ========================================= */
+        .key-organizers {
+            padding-top: 120px;
+        }
+
+        .organizer-row {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .organizer-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border-left: 6px solid var(--primary-red);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .organizer-card.active {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-header {
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            background: var(--white);
+        }
+
+        .card-header:hover {
+            background: var(--light-red);
+        }
+
+        .profile-summary {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* BIGGER PROFILE IMAGES */
+        .profile-img-wrapper {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary-red);
+            box-shadow: 0 6px 15px rgba(211, 47, 47, 0.2);
+            background: var(--medium-gray);
+            flex-shrink: 0;
+        }
+
+        .profile-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .profile-info span {
+            color: var(--primary-red);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .profile-info .affiliation {
+            display: block;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        .toggle-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        .organizer-card.active .toggle-icon {
+            transform: rotate(180deg);
+            background: var(--primary-red);
+            color: var(--white);
+        }
+
+        /* Expandable Content */
+        .card-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background: var(--off-white);
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .organizer-card.active .card-body {
+            max-height: 600px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            padding: 35px;
+        }
+
+        .bio-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--dark-red);
+        }
+
+        .bio-section p {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 25px;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        .contact-box {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--medium-gray);
+        }
+
+        .contact-box h4 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: var(--dark-red);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-item svg {
+            color: var(--primary-red);
+            flex-shrink: 0;
+        }
+
+        /* =========================================
+           8. COMMITTEE LISTS (LONG LISTS)
+           ========================================= */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .member-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid var(--medium-gray);
+            transition: var(--trans-fast);
+        }
+
+        .member-card:hover {
+            border-left-color: var(--primary-red);
+            transform: translateX(5px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .member-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .member-aff {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            line-height: 1.4;
+        }
+
+        .role-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background: var(--light-red);
+            color: var(--dark-red);
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Tabs for Lists */
+        .tabs-container {
+            margin-top: 40px;
+        }
+
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 30px;
+            background: var(--white);
+            border: 1px solid var(--medium-gray);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--trans-fast);
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-red);
+            color: var(--white);
+            border-color: var(--primary-red);
+            box-shadow: var(--shadow-red);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: var(--light-red);
+            border-color: var(--primary-red);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* =========================================
+           9. ROLES TABLE
+           ========================================= */
+        .roles-table-container {
+            overflow-x: auto;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .roles-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .roles-table th, 
+        .roles-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .roles-table th {
+            background: var(--primary-red);
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .roles-table tr:hover {
+            background: var(--light-red);
+        }
+
+        .roles-table td svg {
+            vertical-align: middle;
+            margin-right: 10px;
+            color: var(--dark-red);
+        }
+
+        /* =========================================
+           10. CALENDAR & CTA
+           ========================================= */
+        .calendar-wrapper {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .join-cta {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join-cta::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 40px;
+            background: var(--primary-red);
+            color: var(--white);
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: var(--shadow-lg);
+            transition: var(--trans-fast);
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background: var(--dark-red);
+        }
+
+        /* =========================================
+           11. FOOTER
+           ========================================= */
+        .footer-7 {
+            background: #111;
+            color: var(--white);
+            padding: 70px 0 30px;
+            margin-top: 100px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+
+        .footer-desc {
+            color: #999;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary-red);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* =========================================
+           12. RESPONSIVE STYLES
+           ========================================= */
+        
+        /* Tablet View */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .patrons-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab-btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Mobile View */
+        @media (max-width: 768px) {
+            /* Hide logo image on mobile */
+            .logo-img {
+                display: none !important;
+            }
+            
+            /* Adjust logo text on mobile */
+            .logo {
+                font-size: 1.4rem;
+                gap: 5px;
+            }
+            
+            /* Navbar mobile styling */
+            .navbar {
+                height: 70px;
+                padding: 0 15px;
+            }
+            
+            /* Show hamburger menu */
+            .menu-toggle {
+                display: flex;
+            }
+            
+            /* Mobile navigation */
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                height: calc(100vh - 70px);
+                width: 80%;
+                max-width: 300px;
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                gap: 0;
+                overflow-y: auto;
+            }
+            
+            .nav-links.open {
+                right: 0;
+            }
+            
+            .nav-item {
+                padding: 15px 20px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--light-gray);
+            }
+            
+            .nav-item::before {
+                display: none;
+            }
+            
+            .nav-item:hover,
+            .nav-item.active {
+                background: var(--light-red);
+                color: var(--primary-red);
+            }
+            
+            /* Hero Section Mobile */
+            .page-hero {
+                height: 50vh;
+                margin-top: 70px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+            
+            .hero-text br {
+                display: none;
+            }
+            
+            /* Patrons Section Mobile */
+            .patrons-section {
+                padding: 30px 20px;
+                margin-top: -30px;
+                top: -30px;
+                border-radius: 15px;
+            }
+            
+            .patrons-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .patron-card {
+                padding: 30px 20px;
+            }
+            
+            .patron-image-wrapper {
+                width: 120px;
+                height: 120px;
+                border-width: 4px;
+            }
+            
+            .patron-name {
+                font-size: 1.3rem;
+            }
+            
+            .patron-designation {
+                font-size: 0.9rem;
+            }
+            
+            .university-crest {
+                width: 180px;
+                margin-bottom: 14px;
+            }
+            
+            /* Key Organizers Mobile */
+            .key-organizers {
+                padding-top: 80px;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .section-header {
+                margin-bottom: 40px;
+            }
+            
+            .organizer-card {
+                border-radius: 15px;
+            }
+            
+            .card-header {
+                padding: 20px;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .profile-summary {
+                gap: 15px;
+                flex: 1;
+                min-width: 0;
+            }
+            
+            .profile-img-wrapper {
+                width: 80px;
+                height: 80px;
+                border-width: 3px;
+            }
+            
+            .profile-info h3 {
+                font-size: 1.1rem;
+            }
+            
+            .profile-info span {
+                font-size: 0.85rem;
+            }
+            
+            .profile-info .affiliation {
+                font-size: 0.8rem;
+            }
+            
+            .toggle-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .toggle-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 20px;
+            }
+            
+            .bio-section h4 {
+                font-size: 1rem;
+            }
+            
+            .bio-section p {
+                font-size: 0.9rem;
+                text-align: left;
+            }
+            
+            .contact-box {
+                padding: 20px;
+            }
+            
+            .contact-item {
+                font-size: 0.85rem;
+                word-break: break-all;
+            }
+            
+            /* Tabs Mobile */
+            .tabs-nav {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                padding: 12px 15px;
+                border-radius: 10px;
+                font-size: 0.85rem;
+            }
+            
+            /* Committee Grid Mobile */
+            .committee-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .member-card {
+                padding: 15px;
+            }
+            
+            /* Roles Table Mobile */
+            .roles-table-container {
+                border-radius: 8px;
+            }
+            
+            .roles-table {
+                min-width: 500px;
+            }
+            
+            .roles-table th,
+            .roles-table td {
+                padding: 12px 15px;
+                font-size: 0.85rem;
+            }
+            
+            /* CTA Mobile */
+            .join-cta {
+                padding: 30px 20px;
+                margin-top: 50px;
+                border-radius: 15px;
+            }
+            
+            .join-cta h2 {
+                font-size: 1.5rem;
+            }
+            
+            .join-cta p {
+                font-size: 0.9rem;
+            }
+            
+            .cta-btn {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+            
+            /* Footer Mobile */
+            .footer-7 {
+                padding: 50px 0 25px;
+                margin-top: 60px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .footer-col h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-links a:hover {
+                padding-left: 0;
+            }
+            
+            .copyright {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Small Mobile View */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+            
+            .page-hero {
+                height: 45vh;
+            }
+            
+            .page-hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-text p {
+                font-size: 0.85rem;
+                padding: 0 10px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .patrons-section {
+                padding: 25px 15px;
+            }
+            
+            .patron-image-wrapper {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .patron-name {
+                font-size: 1.15rem;
+            }
+            
+            .patron-role {
+                font-size: 0.75rem;
+                padding: 4px 12px;
+            }
+            
+            .profile-img-wrapper {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .profile-info h3 {
+                font-size: 1rem;
+            }
+            
+            .card-header {
+                padding: 15px;
+            }
+            
+            .university-crest {
+                width: 150px;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 0 10px;
+            }
+        }
+
+        /* Overlay for mobile menu */
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <header id="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="sasi.png" alt="SASI Logo" class="logo-img" onerror="this.style.display='none';">
+                SITE-EMAR <span>2026</span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item active"><a href="organizing-committee.html">Committee</a></li>
+                <li class="nav-item"><a href="registration.html">Registration</a></li>
+                <li class="nav-item"><a href="schedule.html">Schedule</a></li>
+                <li class="nav-item"><a href="speakers.html">Speakers</a></li>
+                <li class="nav-item"><a href="sponsors.html">Sponsors</a></li>
+                <li class="nav-item"><a href="venue.html">Venue</a></li>
+                <li class="nav-item"><a href="memories.html">Memories</a></li>
+                <li class="nav-item"><a href="contact-us.html">Contact</a></li>
+            </ul>
+
+            <div class="menu-toggle" id="menu-btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="hero-text">
+            <h1>The Committee</h1>
+            <p>Meet the distinguished scientists, engineers, and academicians working tirelessly behind <br>SITE-EMAR 2026.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="patrons-section">
+            <div class="text-center">
+                <img src="https://sasi.ac.in/wp-content/uploads/2024/08/SASI-LOGO-960x188-1-800x157-1.png" alt="University Crest" class="university-crest">
+                <h2 class="section-title" style="margin-bottom: 50px;">Chief Patrons</h2>
+            </div>
+            
+            <div class="patrons-grid">
+                <!-- CHIEF PATRON - With Image Placeholder -->
+                <div class="patron-card">
+                    <div class="patron-image-wrapper">
+                        <img src="https://sasi.ac.in/wp-content/uploads/2024/08/chairman.jpg" alt="Sri B. Venu Gopala Krishna" 
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'patron-image-placeholder\'>Add Chairman Image</div>';">
+                    </div>
+                    <div class="patron-role">Chief Patron</div>
+                    <div class="patron-name">Sri B. Venu Gopala Krishna</div>
+                    <div class="patron-designation">Chairman, SASI Educational Society</div>
+                </div>
+
+                <!-- VICE CHAIRMAN - With Image Placeholder -->
+                <div class="patron-card">
+                    <div class="patron-image-wrapper">
+                        <img src="https://sasi.ac.in/wp-content/uploads/2024/08/narendra.jpg" alt="Sri M. Narendra Krishna"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'patron-image-placeholder\'>Add Vice Chairman Image</div>';">
+                    </div>
+                    <div class="patron-role">Patron</div>
+                    <div class="patron-name">Sri M. Narendra Krishna</div>
+                    <div class="patron-designation">Vice Chairman, SASI Educational Society</div>
+                </div>
+
+                <!-- PRINCIPAL - With Image Placeholder -->
+                <div class="patron-card">
+                    <div class="patron-image-wrapper">
+                        <img src="https://sasi.ac.in/wp-content/uploads/2024/08/Principal.jpg" alt="Prof. Mohammed Ismail"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'patron-image-placeholder\'>Add Principal Image</div>';">
+                    </div>
+                    <div class="patron-role">Patron</div>
+                    <div class="patron-name">Prof. Mohammed Ismail</div>
+                    <div class="patron-designation">Principal, SITE</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-padding key-organizers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Organizing Committee</h2>
+                <p class="section-subtitle">Click on the cards below to view detailed profiles and responsibilities.</p>
+            </div>
+
+            <div class="organizer-row">
+
+                <!-- ORGANIZER 4 - Dr. Ch. Srinivas -->
+                <div class="organizer-card" id="card-4">
+                    <div class="card-header" onclick="toggleCard('card-4')">
+                        <div class="profile-summary">
+                            <div class="profile-img-wrapper">
+                                <img src="https://i1.rgstatic.net/ii/profile.image/278699648798728-1443458582860_Q512/Srinivas-Chintoju.jpg" alt="Dr. Ch. Srinivas" class="profile-img"
+                                     onerror="this.src='https://ui-avatars.com/api/?name=Ch+Srinivas&background=B71C1C&color=fff&size=200';">
+                            </div>
+                            <div class="profile-info">
+                                <h3>Dr. Ch. Srinivas</h3>
+                                <span>Lead Contact & Convener</span>
+                                <span class="affiliation">SITE, Tadepalligudem</span>
+                            </div>
+                        </div>
+                        <div class="toggle-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="details-grid">
+                            <div class="bio-section">
+                                <h4>Responsibility</h4>
+                                <p>Dr. Srinivas acts as the primary point of contact for all conference-related queries. He coordinates between the technical committee, the advisory board, and the sponsoring agencies to ensure a seamless event.</p>
+                            </div>
+                            <div class="contact-box">
+                                <h4>Contact Information</h4>
+                                <div class="contact-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    9440576225
+                                </div>
+                                <div class="contact-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    drsrinivas@sasi.ac.in
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ORGANIZER 1 - Dr. Pramod Bhatt -->
+                <div class="organizer-card" id="card-1">
+                    <div class="card-header" onclick="toggleCard('card-1')">
+                        <div class="profile-summary">
+                            <div class="profile-img-wrapper">
+                                <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=CyAMcTcAAAAJ&citpid=3" alt="Dr. Pramod Bhatt" class="profile-img"
+                                     onerror="this.src='https://ui-avatars.com/api/?name=Pramod+Bhatt&background=D32F2F&color=fff&size=200';">
+                            </div>
+                            <div class="profile-info">
+                                <h3>Dr. Pramod Bhatt</h3>
+                                <span>Scientific Officer</span>
+                                <span class="affiliation">BARC Mumbai</span>
+                            </div>
+                        </div>
+                        <div class="toggle-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="details-grid">
+                            <div class="bio-section">
+                                <h4>Research Focus</h4>
+                                <p>Dr. Bhatt specializes in the Magnetism Section of the Solid State Physics Division. His work focuses on neutron scattering techniques to understand magnetic structures in rare-earth intermetallics. He has been instrumental in the development of advanced shielding materials for nuclear applications.</p>
+                                <h4>Conference Role</h4>
+                                <p>As the primary Scientific Advisor, Dr. Bhatt oversees the peer-review process for the Magnetism track and coordinates with international keynote speakers.</p>
+                            </div>
+                            <div class="contact-box">
+                                <h4>Contact Information</h4>
+                                <div class="contact-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    9757169257
+                                </div>
+                                <div class="contact-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    prabhatt@barc.gov.in
+                                </div>
+                                <div class="contact-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    drpramodbhatt@gmail.com
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ORGANIZER 2 - Dr. Sher Singh Meena -->
+                <div class="organizer-card" id="card-2">
+                    <div class="card-header" onclick="toggleCard('card-2')">
+                        <div class="profile-summary">
+                            <div class="profile-img-wrapper">
+                                <img src="https://i1.rgstatic.net/ii/profile.image/809988410847234-1570127694364_Q128/Sher-Singh-Meena.jpg" alt="Dr. Sher Singh Meena" class="profile-img"
+                                     onerror="this.src='https://ui-avatars.com/api/?name=Sher+Singh&background=D32F2F&color=fff&size=200';">
+                            </div>
+                            <div class="profile-info">
+                                <h3>Dr. Sher Singh Meena</h3>
+                                <span>Scientific Officer</span>
+                                <span class="affiliation">BARC Mumbai</span>
+                            </div>
+                        </div>
+                        <div class="toggle-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="details-grid">
+                            <div class="bio-section">
+                                <h4>Research Focus</h4>
+                                <p>Dr. Meena is a distinguished expert in the Solid State Physics Division at BARC. His expertise encompasses Mössbauer spectroscopy and the synthesis of ferrite nanomaterials for high-frequency applications. He has published over 100 papers in reputed international journals.</p>
+                                <h4>Conference Role</h4>
+                                <p>He serves as the Technical Program Chair, ensuring the scientific rigor of the proceedings. He is also responsible for the workshop sessions on Nanomaterial Characterization.</p>
+                            </div>
+                            <div class="contact-box">
+                                <h4>Contact Information</h4>
+                                <div class="contact-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    9969960129
+                                </div>
+                                <div class="contact-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    ssingh@barc.gov.in
+                                </div>
+                                <div class="contact-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    shersinghgahlot@gmail.com
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ORGANIZER 3 - Dr. M. Deepty -->
+                <div class="organizer-card" id="card-3">
+                    <div class="card-header" onclick="toggleCard('card-3')">
+                        <div class="profile-summary">
+                            <div class="profile-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200" alt="Dr. M. Deepty" class="profile-img"
+                                     onerror="this.src='https://ui-avatars.com/api/?name=M+Deepty&background=D32F2F&color=fff&size=200';">
+                            </div>
+                            <div class="profile-info">
+                                <h3>Dr. M. Deepty</h3>
+                                <span>Professor in Physics</span>
+                                <span class="affiliation">SITE, Tadepalligudem</span>
+                            </div>
+                        </div>
+                        <div class="toggle-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="details-grid">
+                            <div class="bio-section">
+                                <h4>Research Focus</h4>
+                                <p>Dr. Deepty heads the Nanomaterials & Nanomagnetism Laboratory at Sasi Institute. Her research interests span multiferroic composites, diluted magnetic semiconductors, and spintronics. She actively mentors PhD scholars in advanced material synthesis.</p>
+                                <h4>Conference Role</h4>
+                                <p>As the Local Organizing Chair, Dr. Deepty manages the onsite logistics, student volunteer teams, and the coordination of the abstract submission portal.</p>
+                            </div>
+                            <div class="contact-box">
+                                <h4>Contact Information</h4>
+                                <div class="contact-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    9247890523
+                                </div>
+                                <div class="contact-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    deepthi@sasi.ac.in
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light" style="background: var(--white);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Committee Members</h2>
+                <p class="section-subtitle">A global network of experts contributing to SITE-EMAR 2026.</p>
+            </div>
+
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" onclick="openTab('advisory')">International Advisory Board</button>
+                    <button class="tab-btn" onclick="openTab('national')">National Advisory Board</button>
+                    <button class="tab-btn" onclick="openTab('technical')">Technical Committee</button>
+                    <button class="tab-btn" onclick="openTab('student')">Student Volunteers</button>
+                </div>
+
+                <div id="advisory" class="tab-content active">
+                    <div class="committee-grid">
+                        <div class="member-card">
+                            <span class="role-badge">USA</span>
+                            <div class="member-name">Prof. John Anderson</div>
+                            <div class="member-aff">MIT, Materials Science Dept</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Germany</span>
+                            <div class="member-name">Dr. Klaus Weber</div>
+                            <div class="member-aff">Max Planck Institute</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Japan</span>
+                            <div class="member-name">Prof. Hiroshi Tanaka</div>
+                            <div class="member-aff">University of Tokyo</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">UK</span>
+                            <div class="member-name">Dr. Sarah Connor</div>
+                            <div class="member-aff">Imperial College London</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Australia</span>
+                            <div class="member-name">Prof. Mark Richards</div>
+                            <div class="member-aff">UNSW Sydney</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Singapore</span>
+                            <div class="member-name">Dr. Li Wei</div>
+                            <div class="member-aff">Nanyang Technological University</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">France</span>
+                            <div class="member-name">Prof. Pierre Dupont</div>
+                            <div class="member-aff">CNRS Paris</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Canada</span>
+                            <div class="member-name">Dr. Emily Chen</div>
+                            <div class="member-aff">University of Toronto</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">South Korea</span>
+                            <div class="member-name">Prof. Kim Min-Su</div>
+                            <div class="member-aff">KAIST</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Italy</span>
+                            <div class="member-name">Dr. Marco Rossini</div>
+                            <div class="member-aff">Politecnico di Milano</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Sweden</span>
+                            <div class="member-name">Prof. Lars Svensson</div>
+                            <div class="member-aff">KTH Royal Institute</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Brazil</span>
+                            <div class="member-name">Dr. Ana Silva</div>
+                            <div class="member-aff">University of São Paulo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="national" class="tab-content">
+                    <div class="committee-grid">
+                        <div class="member-card">
+                            <span class="role-badge">IIT Bombay</span>
+                            <div class="member-name">Prof. R.K. Shyamasundar</div>
+                            <div class="member-aff">Computer Science & Engineering</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">IISc Bangalore</span>
+                            <div class="member-name">Dr. U. Ramamurty</div>
+                            <div class="member-aff">Department of Materials Engineering</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">IIT Madras</span>
+                            <div class="member-name">Prof. B.S. Murty</div>
+                            <div class="member-aff">Metallurgical and Materials Eng</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">DRDO</span>
+                            <div class="member-name">Dr. Tessy Thomas</div>
+                            <div class="member-aff">Distinguished Scientist</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">NIT Warangal</span>
+                            <div class="member-name">Prof. N.V. Ramana Rao</div>
+                            <div class="member-aff">Director</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">JNTU Kakinada</span>
+                            <div class="member-name">Prof. G.V.R. Prasada Raju</div>
+                            <div class="member-aff">Vice-Chancellor</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Andhra University</span>
+                            <div class="member-name">Prof. P.V.G.D. Prasad Reddy</div>
+                            <div class="member-aff">Vice-Chancellor</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">CSIR-NPL</span>
+                            <div class="member-name">Dr. D.K. Aswal</div>
+                            <div class="member-aff">Director</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">IGCAR</span>
+                            <div class="member-name">Dr. B. Venkatraman</div>
+                            <div class="member-aff">Director</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Hyderabad Central Univ</span>
+                            <div class="member-name">Prof. B.J. Rao</div>
+                            <div class="member-aff">Vice-Chancellor</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">IIT Hyderabad</span>
+                            <div class="member-name">Prof. B.S. Murty</div>
+                            <div class="member-aff">Director</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">SITE</span>
+                            <div class="member-name">Dr. T.V. Rama Krishna</div>
+                            <div class="member-aff">Dean, Academics</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="technical" class="tab-content">
+                    <div class="committee-grid">
+                        <div class="member-card">
+                            <span class="role-badge">Reviewer</span>
+                            <div class="member-name">Dr. K. Bhanu Prakash</div>
+                            <div class="member-aff">Assoc. Professor, SITE</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Track Chair</span>
+                            <div class="member-name">Dr. P. Venkateswara Rao</div>
+                            <div class="member-aff">HOD, Physics Dept, SITE</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Editor</span>
+                            <div class="member-name">Dr. S. Krishna Rao</div>
+                            <div class="member-aff">Professor, Physics</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Logistics</span>
+                            <div class="member-name">Mr. A. V. S. Pawan Kumar</div>
+                            <div class="member-aff">Asst. Professor</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Web Chair</span>
+                            <div class="member-name">Mr. Ch. Balaji</div>
+                            <div class="member-aff">Asst. Professor, CSE</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Session Manager</span>
+                            <div class="member-name">Dr. G. Leela</div>
+                            <div class="member-aff">Assoc. Professor</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Finance</span>
+                            <div class="member-name">Mr. K. Ravi Kumar</div>
+                            <div class="member-aff">Finance Officer</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Hospitality</span>
+                            <div class="member-name">Mrs. B. Santhi</div>
+                            <div class="member-aff">Admin Officer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="student" class="tab-content">
+                    <div class="committee-grid">
+                        <div class="member-card">
+                            <span class="role-badge">Student Lead</span>
+                            <div class="member-name">K. Sai Teja</div>
+                            <div class="member-aff">IV B.Tech, ECE</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Volunteer</span>
+                            <div class="member-name">P. Lakshmi</div>
+                            <div class="member-aff">III B.Tech, CSE</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Volunteer</span>
+                            <div class="member-name">M. Rajesh</div>
+                            <div class="member-aff">III B.Tech, ME</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Volunteer</span>
+                            <div class="member-name">G. Snigdha</div>
+                            <div class="member-aff">IV B.Tech, EEE</div>
+                        </div>
+                        <div class="member-card">
+                            <span class="role-badge">Media</span>
+                            <div class="member-name">V. Harsha</div>
+                            <div class="member-aff">IV B.Tech, IT</div>
+                        </div>
+                         <div class="member-card">
+                            <span class="role-badge">Logistics</span>
+                            <div class="member-name">B. Karthik</div>
+                            <div class="member-aff">III B.Tech, Civil</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center" style="margin-bottom: 40px;">Functional Roles</h2>
+            <div class="roles-table-container">
+                <table class="roles-table">
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Name</th>
+                            <th>Responsibility</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg> Convener</td>
+                            <td>Dr. Ch. Srinivas</td>
+                            <td>Overall coordination and funding</td>
+                            <td>drsrinivas@sasi.ac.in</td>
+                        </tr>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Publication Chair</td>
+                            <td>Dr. Sher Singh Meena</td>
+                            <td>Proceedings and Journal liaison</td>
+                            <td>ssingh@barc.gov.in</td>
+                        </tr>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> Treasurer</td>
+                            <td>Mr. K. Ravi Kumar</td>
+                            <td>Financial management and registrations</td>
+                            <td>accounts@site-emar.com</td>
+                        </tr>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Local Hospitality</td>
+                            <td>Dr. M. Deepty</td>
+                            <td>Accommodation and Transport</td>
+                            <td>deepthi@sasi.ac.in</td>
+                        </tr>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Web Master</td>
+                            <td>Mr. Ch. Balaji</td>
+                            <td>Website maintenance and updates</td>
+                            <td>webmaster@site-emar.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="join-cta">
+            <h2>Interested in Volunteering?</h2>
+            <p class="mt-20">We are always looking for enthusiastic students and faculty to join our organizing sub-committees. Certificates of appreciation will be provided.</p>
+            <a href="contact-us.html" class="cta-btn">Join the Team</a>
+        </div>
+    </div>
+
+    <footer class="footer-7">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">SITE-EMAR 2026</div>
+                    <p class="footer-desc">
+                        Proceedings of the International Conference on Smart Innovative Techniques and Emerging Trends in Engineering Materials for Advanced Research.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="organizing-committee.html">Committee</a></li>
+                        <li><a href="registration.html">Register</a></li>
+                        <li><a href="venue.html">Venue</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Code of Conduct</a></li>
+                        <li><a href="#">Sponsorship T&C</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li>Email: drsrinivas@sasi.ac.in</li>
+                        <li>Phone: +91 94405 76225</li>
+                        <li>Tadepalligudem, AP, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 SITE-EMAR. All Rights Reserved. Hosted by Sasi Institute of Technology & Engineering.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const navOverlay = document.getElementById('nav-overlay');
+        
+        function toggleMenu() {
+            navLinks.classList.toggle('open');
+            navOverlay.classList.toggle('active');
+            
+            const bars = menuBtn.querySelectorAll('.bar');
+            if(navLinks.classList.contains('open')){
+                bars[0].style.transform = "rotate(-45deg) translate(-5px, 6px)";
+                bars[1].style.opacity = "0";
+                bars[2].style.transform = "rotate(45deg) translate(-5px, -6px)";
+                document.body.style.overflow = 'hidden';
+            } else {
+                bars[0].style.transform = "none";
+                bars[1].style.opacity = "1";
+                bars[2].style.transform = "none";
+                document.body.style.overflow = '';
+            }
+        }
+        
+        menuBtn.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+        
+        // Close menu when clicking a nav item
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                if (navLinks.classList.contains('open')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // 2. Expandable Organizer Cards
+        function toggleCard(id) {
+            const card = document.getElementById(id);
+            const allCards = document.querySelectorAll('.organizer-card');
+            
+            allCards.forEach(c => {
+                if(c.id !== id) c.classList.remove('active');
+            });
+            
+            card.classList.toggle('active');
+        }
+
+        // 3. Tab System for Lists
+        function openTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            const activeBtn = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(tabName));
+            if(activeBtn) activeBtn.classList.add('active');
+        }
+
+        // 4. Scroll Reveal Animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.organizer-card, .patron-card, .member-card');
+            
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.style.opacity = "1";
+                    reveal.style.transform = "translateY(0)";
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Initialize Opacity for animation
+        document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll('.organizer-card, .patron-card, .member-card');
+            reveals.forEach(el => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(20px)";
+                el.style.transition = "all 0.5s ease-out";
+            });
+            
+            // Trigger initial reveal
+            setTimeout(revealOnScroll, 100);
+        });
+
+        // 5. Close mobile menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Keynote Speakers | SITE-EMAR 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           1. CSS VARIABLES (RED & WHITE THEME)
+           ========================================= */
+        :root {
+            --primary-red: #D32F2F;       
+            --dark-red: #B71C1C;          
+            --light-red: #FFEBEE;         
+            --hover-red: #E57373;
+            --accent-red: #FF1744;        
+            
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --light-gray: #EEEEEE;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #424242;
+            --text-dark: #212121;
+            --text-light: #757575;
+
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 5px 15px rgba(0,0,0,0.1);
+            --shadow-lg: 0 15px 35px rgba(0,0,0,0.15);
+            --shadow-red: 0 10px 25px rgba(211, 47, 47, 0.3);
+            --glass: rgba(255, 255, 255, 0.95);
+
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Merriweather', serif;
+
+            --trans-fast: 0.3s ease;
+            --trans-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* =========================================
+           2. RESET & GLOBAL STYLES
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-heading);
+            background-color: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--trans-fast);
+        }
+
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-padding { padding: 80px 0; }
+        .text-center { text-align: center; }
+        .text-red { color: var(--primary-red); }
+        .mb-20 { margin-bottom: 20px; }
+        .mb-40 { margin-bottom: 40px; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-red);
+            margin: 10px auto 0;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-top: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* =========================================
+           3. ANIMATIONS
+           ========================================= */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* =========================================
+           4. NAVIGATION
+           ========================================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: var(--trans-fast);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-item {
+            position: relative;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 8px var(--primary-red);
+        }
+
+        .nav-item:hover::before,
+        .nav-item.active::before {
+            width: 100%;
+        }
+
+        .nav-item.active {
+            color: var(--primary-red);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* =========================================
+           5. HERO SECTION
+           ========================================= */
+        .speakers-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* =========================================
+           6. SEARCH & FILTER
+           ========================================= */
+        .search-bar-section {
+            background: var(--white);
+            padding: 30px 0;
+            border-bottom: 1px solid var(--medium-gray);
+            position: sticky;
+            top: 80px;
+            z-index: 900;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            padding: 12px 20px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 30px;
+            width: 300px;
+            font-size: 1rem;
+            transition: var(--trans-fast);
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-red);
+            box-shadow: 0 0 10px var(--light-red);
+        }
+
+        .filter-btn {
+            padding: 12px 25px;
+            background: var(--off-white);
+            border: 1px solid var(--medium-gray);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--trans-fast);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-red);
+            color: var(--white);
+            border-color: var(--primary-red);
+        }
+
+        /* =========================================
+           7. SPEAKERS GRID
+           ========================================= */
+        .speaker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .speaker-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--trans-smooth);
+            position: relative;
+            cursor: pointer;
+            border-bottom: 5px solid transparent;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-bottom-color: var(--primary-red);
+        }
+
+        .speaker-img-wrapper {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .speaker-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .speaker-card:hover .speaker-img {
+            transform: scale(1.1);
+        }
+
+        .flag-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 30px;
+            border-radius: 4px;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            padding: 2px;
+            z-index: 2;
+        }
+
+        .speaker-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .speaker-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .speaker-title {
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .speaker-aff {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .topic-badge {
+            display: inline-block;
+            background: var(--light-gray);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+        }
+
+        /* =========================================
+           8. MODAL STYLES
+           ========================================= */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--white);
+            width: 100%;
+            max-width: 800px;
+            border-radius: 20px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            box-shadow: var(--shadow-red);
+            animation: scaleIn 0.3s ease-out;
+            position: relative;
+        }
+
+        .modal-img-col {
+            background: var(--light-gray);
+            position: relative;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-details {
+            padding: 40px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 35px;
+            height: 35px;
+            background: var(--off-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--trans-fast);
+            z-index: 10;
+        }
+
+        .close-modal:hover {
+            background: var(--primary-red);
+            color: var(--white);
+        }
+
+        .modal-name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .modal-role {
+            font-size: 1.1rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .modal-bio {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .modal-topic-box {
+            background: var(--light-red);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-red);
+        }
+
+        .modal-topic-title {
+            font-weight: 700;
+            color: var(--dark-red);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* =========================================
+           9. CTA SECTION
+           ========================================= */
+        .invite-cta {
+            background: linear-gradient(135deg, var(--dark-red), var(--primary-red));
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .invite-form {
+            max-width: 600px;
+            margin: 30px auto 0;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .cta-input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.95rem;
+        }
+
+        .cta-btn {
+            background: var(--white);
+            color: var(--primary-red);
+            font-weight: 700;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: var(--trans-fast);
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.02);
+            background: var(--off-white);
+        }
+
+        /* =========================================
+           10. FOOTER
+           ========================================= */
+        .footer {
+            background: #111;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 15px;
+        }
+
+        .footer-col p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-red);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* =========================================
+           11. RESPONSIVE STYLES
+           ========================================= */
+        @media (max-width: 1024px) {
+            .modal-content {
+                grid-template-columns: 250px 1fr;
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Navigation Mobile */
+            .navbar {
+                padding: 0 15px;
+                height: 70px;
+            }
+
+            /* Hide logo image on mobile */
+            .logo-img {
+                display: none !important;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                height: calc(100vh - 70px);
+                width: 75%;
+                max-width: 300px;
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                gap: 0;
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .nav-item {
+                padding: 15px 20px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--light-gray);
+            }
+
+            .nav-item::before {
+                display: none;
+            }
+
+            .nav-item:hover,
+            .nav-item.active {
+                background: var(--light-red);
+                color: var(--primary-red);
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            /* Hero Mobile */
+            .speakers-hero {
+                height: 40vh;
+                margin-top: 70px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                padding: 0 20px;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+
+            /* Search Bar Mobile */
+            .search-bar-section {
+                top: 70px;
+                padding: 20px 0;
+            }
+
+            .filter-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .search-input {
+                width: 90%;
+            }
+
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            /* Speaker Grid Mobile */
+            .speaker-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .speaker-img-wrapper {
+                height: 250px;
+            }
+
+            .section-padding {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+            /* Modal Mobile */
+            .modal-content {
+                grid-template-columns: 1fr;
+                max-height: 90vh;
+                margin: 10px;
+            }
+
+            .modal-img-col {
+                height: 200px;
+            }
+
+            .modal-details {
+                padding: 20px;
+            }
+
+            .modal-name {
+                font-size: 1.5rem;
+            }
+
+            .modal-role {
+                font-size: 1rem;
+            }
+
+            .modal-bio {
+                font-size: 0.9rem;
+            }
+
+            /* CTA Mobile */
+            .invite-cta {
+                padding: 50px 0;
+            }
+
+            .invite-cta h2 {
+                font-size: 1.6rem !important;
+            }
+
+            .invite-form {
+                padding: 20px;
+                margin: 20px 15px 0;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            /* Footer Mobile */
+            .footer {
+                padding: 40px 0 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .speaker-name {
+                font-size: 1.2rem;
+            }
+
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header id="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="sasi.png" alt="SASI Logo" class="logo-img" onerror="this.style.display='none';">
+                SITE-EMAR <span>2026</span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="organizing-committee.html">Committee</a></li>
+                <li class="nav-item"><a href="registration.html">Registration</a></li>
+                <li class="nav-item"><a href="schedule.html">Schedule</a></li>
+                <li class="nav-item active"><a href="speakers.html">Speakers</a></li>
+                <li class="nav-item"><a href="sponsors.html">Sponsors</a></li>
+                <li class="nav-item"><a href="venue.html">Venue</a></li>
+                <li class="nav-item"><a href="memories.html">Memories</a></li>
+                <li class="nav-item"><a href="contact-us.html">Contact</a></li>
+            </ul>
+
+            <div class="menu-toggle" id="menu-btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="speakers-hero">
+        <div class="hero-content">
+            <h1>Distinguished Speakers</h1>
+            <p>Meet the global visionaries shaping the future of engineering materials and nanotechnology.</p>
+        </div>
+    </section>
+
+    <!-- ========== SEARCH & FILTER ========== -->
+    <section class="search-bar-section">
+        <div class="container">
+            <div class="filter-container">
+                <input type="text" class="search-input" id="searchBox" placeholder="Search speakers by name..." onkeyup="filterSpeakers()">
+                <button class="filter-btn active" onclick="filterCategory('all')">All</button>
+                <button class="filter-btn" onclick="filterCategory('international')">International</button>
+                <button class="filter-btn" onclick="filterCategory('national')">National</button>
+                <button class="filter-btn" onclick="filterCategory('industry')">Industry Experts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SPEAKERS SECTION ========== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Keynote Speakers</h2>
+                <p class="section-subtitle">World-renowned experts delivering plenary sessions.</p>
+            </div>
+
+            <div class="speaker-grid" id="speakerGrid">
+                
+                <!-- Speaker 1 -->
+                <div class="speaker-card" data-category="international" onclick="openModal('s1')">
+                    <div class="speaker-img-wrapper">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+Jenkins&background=D32F2F&color=fff&size=400" alt="Prof. Sarah Jenkins" class="speaker-img">
+                        <div class="flag-badge">
+                            <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+                                <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                                <path d="M0,0 v30 h60 v-30 z" fill="#00247d"/>
+                                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                                <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#cf142b" stroke-width="4"/>
+                                <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                                <path d="M30,0 v30 M0,15 h60" stroke="#cf142b" stroke-width="6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Prof. Sarah Jenkins</h3>
+                        <div class="speaker-title">University of Manchester</div>
+                        <div class="speaker-aff">Department of Materials Science</div>
+                        <span class="topic-badge">Graphene</span>
+                    </div>
+                </div>
+
+                <!-- Speaker 2 -->
+                <div class="speaker-card" data-category="international" onclick="openModal('s2')">
+                    <div class="speaker-img-wrapper">
+                        <img src="https://ui-avatars.com/api/?name=John+Anderson&background=1976D2&color=fff&size=400" alt="Dr. John Anderson" class="speaker-img">
+                        <div class="flag-badge">
+                            <svg viewBox="0 0 1235 650" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="1235" height="650" fill="#B22234"/>
+                                <path d="M0,50H1235M0,150H1235M0,250H1235M0,350H1235M0,450H1235M0,550H1235" stroke="#FFF" stroke-width="50"/>
+                                <rect width="494" height="350" fill="#3C3B6E"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. John Anderson</h3>
+                        <div class="speaker-title">MIT, USA</div>
+                        <div class="speaker-aff">Director, Laboratory of Nanotech</div>
+                        <span class="topic-badge">Nanofabrication</span>
+                    </div>
+                </div>
+
+                <!-- Speaker 3 -->
+                <div class="speaker-card" data-category="national" onclick="openModal('s3')">
+                    <div class="speaker-img-wrapper">
+                        <img src="https://ui-avatars.com/api/?name=Pramod+Bhatt&background=2E7D32&color=fff&size=400" alt="Dr. Pramod Bhatt" class="speaker-img">
+                        <div class="flag-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+                                <rect width="900" height="200" fill="#FF9933"/>
+                                <rect y="200" width="900" height="200" fill="#FFFFFF"/>
+                                <rect y="400" width="900" height="200" fill="#138808"/>
+                                <circle cx="450" cy="300" r="80" fill="none" stroke="#000080" stroke-width="15"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. Pramod Bhatt</h3>
+                        <div class="speaker-title">BARC, Mumbai</div>
+                        <div class="speaker-aff">Solid State Physics Division</div>
+                        <span class="topic-badge">Magnetism</span>
+                    </div>
+                </div>
+
+                <!-- Speaker 4 -->
+                <div class="speaker-card" data-category="international" onclick="openModal('s4')">
+                    <div class="speaker-img-wrapper">
+                        <img src="https://ui-avatars.com/api/?name=Akira+Tanaka&background=C62828&color=fff&size=400" alt="Prof. Akira Tanaka" class="speaker-img">
+                        <div class="flag-badge">
+                            <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="900" height="600" fill="#fff"/>
+                                <circle cx="450" cy="300" r="180" fill="#bc002d"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Prof. Akira Tanaka</h3>
+                        <div class="speaker-title">University of Tokyo</div>
+                        <div class="speaker-aff">Advanced Materials Inst.</div>
+                        <span class="topic-badge">Semiconductors</span>
+                    </div>
+                </div>
+
+                <!-- Speaker 5 -->
+                <div class="speaker-card" data-category="national" onclick="openModal('s5')">
+                    <div class="speaker-img-wrapper">
+                        <img src="https://ui-avatars.com/api/?name=Sher+Singh&background=FF6F00&color=fff&size=400" alt="Dr. Sher Singh Meena" class="speaker-img">
+                        <div class="flag-badge">
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+                                <rect width="900" height="200" fill="#FF9933"/>
+                                <rect y="200" width="900" height="200" fill="#FFFFFF"/>
+                                <rect y="400" width="900" height="200" fill="#138808"/>
+                                <circle cx="450" cy="300" r="80" fill="none" stroke="#000080" stroke-width="15"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. Sher Singh Meena</h3>
+                        <div class="speaker-title">BARC, Mumbai</div>
+                        <div class="speaker-aff">Ferrite Materials Expert</div>
+                        <span class="topic-badge">Nanomaterials</span>
+                    </div>
+                </div>
+
+                <!-- Speaker 6 -->
+                <div class="speaker-card" data-category="international" onclick="openModal('s6')">
+                    <div class="speaker-img-wrapper">
+                        <img src="https://ui-avatars.com/api/?name=Hans+Weber&background=37474F&color=fff&size=400" alt="Dr. Hans Weber" class="speaker-img">
+                        <div class="flag-badge">
+                             <svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="5" height="3" y="0" x="0" fill="#000"/>
+                                <rect width="5" height="2" y="1" x="0" fill="#D00"/>
+                                <rect width="5" height="1" y="2" x="0" fill="#FFCE00"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. Hans Weber</h3>
+                        <div class="speaker-title">Max Planck Institute</div>
+                        <div class="speaker-aff">Polymer Research</div>
+                        <span class="topic-badge">Polymers</span>
+                    </div>
+                </div>
+
+                <!-- Speaker 7 -->
+                <div class="speaker-card" data-category="industry" onclick="openModal('s7')">
+                    <div class="speaker-img-wrapper">
+                        <img src="https://ui-avatars.com/api/?name=Ravi+Shankar&background=4A148C&color=fff&size=400" alt="Dr. Ravi Shankar" class="speaker-img">
+                        <div class="flag-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+                                <rect width="900" height="200" fill="#FF9933"/>
+                                <rect y="200" width="900" height="200" fill="#FFFFFF"/>
+                                <rect y="400" width="900" height="200" fill="#138808"/>
+                                <circle cx="450" cy="300" r="80" fill="none" stroke="#000080" stroke-width="15"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. Ravi Shankar</h3>
+                        <div class="speaker-title">Tata Steel R&D</div>
+                        <div class="speaker-aff">Chief of Materials</div>
+                        <span class="topic-badge">Metallurgy</span>
+                    </div>
+                </div>
+
+                <!-- Speaker 8 -->
+                <div class="speaker-card" data-category="national" onclick="openModal('s8')">
+                    <div class="speaker-img-wrapper">
+                        <img src="https://ui-avatars.com/api/?name=M+Deepty&background=880E4F&color=fff&size=400" alt="Dr. M. Deepty" class="speaker-img">
+                        <div class="flag-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+                                <rect width="900" height="200" fill="#FF9933"/>
+                                <rect y="200" width="900" height="200" fill="#FFFFFF"/>
+                                <rect y="400" width="900" height="200" fill="#138808"/>
+                                <circle cx="450" cy="300" r="80" fill="none" stroke="#000080" stroke-width="15"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. M. Deepty</h3>
+                        <div class="speaker-title">SITE, Tadepalligudem</div>
+                        <div class="speaker-aff">Nanomagnetism Lab</div>
+                        <span class="topic-badge">Biomedical</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="invite-cta">
+        <div class="container">
+            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Nominate a Speaker</h2>
+            <p style="opacity: 0.9;">Do you know an expert who should be on our stage? Submit a proposal.</p>
+            
+            <form class="invite-form" onsubmit="alert('Nomination Submitted!'); return false;">
+                <div class="form-row">
+                    <input type="text" class="cta-input" placeholder="Speaker Name" required>
+                    <input type="text" class="cta-input" placeholder="Affiliation" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" class="cta-input" placeholder="Their Email Address" required>
+                    <input type="text" class="cta-input" placeholder="Proposed Topic" required>
+                </div>
+                <button type="submit" class="cta-btn">Submit Nomination</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SITE-EMAR 2026</h3>
+                    <p>Connecting the brightest minds in material science to foster innovation and sustainable development.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="registration.html">Registration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 SITE-EMAR. All Rights Reserved. Hosted by Sasi Institute of Technology & Engineering.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== MODAL ========== -->
+    <div class="modal-overlay" id="speakerModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="close-modal" onclick="closeModal()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
+            
+            <div class="modal-img-col">
+                <img id="m_img" src="" alt="Speaker" class="modal-img">
+            </div>
+            
+            <div class="modal-details">
+                <h2 id="m_name" class="modal-name">Speaker Name</h2>
+                <div id="m_role" class="modal-role">Affiliation</div>
+                
+                <p id="m_bio" class="modal-bio"></p>
+                
+                <div class="modal-topic-box">
+                    <span class="modal-topic-title">Keynote Abstract:</span>
+                    <p id="m_abstract" style="font-size: 0.9rem; color: var(--text-dark);"></p>
+                </div>
+
+                <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="#" style="color: var(--primary-red); font-weight: 600; display: flex; align-items: center; gap: 5px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        LinkedIn
+                    </a>
+                    <a href="#" style="color: var(--primary-red); font-weight: 600; display: flex; align-items: center; gap: 5px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            const bars = menuBtn.querySelectorAll('.bar');
+            if(navLinks.classList.contains('open')){
+                bars[0].style.transform = "rotate(-45deg) translate(-5px, 6px)";
+                bars[1].style.opacity = "0";
+                bars[2].style.transform = "rotate(45deg) translate(-5px, -6px)";
+            } else {
+                bars[0].style.transform = "none";
+                bars[1].style.opacity = "1";
+                bars[2].style.transform = "none";
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-item a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                const bars = menuBtn.querySelectorAll('.bar');
+                bars[0].style.transform = "none";
+                bars[1].style.opacity = "1";
+                bars[2].style.transform = "none";
+            });
+        });
+
+        // Speaker Data
+        const speakerData = {
+            's1': {
+                name: "Prof. Sarah Jenkins",
+                role: "University of Manchester, UK",
+                img: "https://ui-avatars.com/api/?name=Sarah+Jenkins&background=D32F2F&color=fff&size=400",
+                bio: "Prof. Jenkins is a pioneer in the field of 2D materials, specifically graphene and its derivatives. With over 200 publications and 15,000 citations, she leads the Advanced Materials Group at Manchester. Her work focuses on the scalable synthesis of graphene for energy storage applications.",
+                abstract: "<b>Topic: Beyond Graphene - The Future of 2D Materials.</b> This talk will explore emerging 2D materials beyond graphene, such as transition metal dichalcogenides (TMDs), and their potential to revolutionize flexible electronics."
+            },
+            's2': {
+                name: "Dr. John Anderson",
+                role: "MIT, USA",
+                img: "https://ui-avatars.com/api/?name=John+Anderson&background=1976D2&color=fff&size=400",
+                bio: "Dr. Anderson serves as the Director of the Laboratory of Nanotechnology at MIT. His research bridges the gap between top-down lithography and bottom-up self-assembly. He is a recipient of the prestigious Feynman Prize for Nanotechnology.",
+                abstract: "<b>Topic: Nanofabrication at the Limit of Physics.</b> Discussing the thermodynamic barriers in sub-5nm lithography and novel error-correction mechanisms in self-assembled monolayers."
+            },
+            's3': {
+                name: "Dr. Pramod Bhatt",
+                role: "BARC, Mumbai",
+                img: "https://ui-avatars.com/api/?name=Pramod+Bhatt&background=2E7D32&color=fff&size=400",
+                bio: "Scientific Officer at the Solid State Physics Division, BARC. Dr. Bhatt specializes in neutron scattering and magnetic structure determination of rare-earth intermetallics. He has been instrumental in developing indigenous neutron detectors.",
+                abstract: "<b>Topic: Neutron Scattering in Magnetic Materials.</b> An overview of neutron diffraction techniques utilized at the Dhruva reactor to probe complex magnetic ordering in functional materials."
+            },
+            's4': {
+                name: "Prof. Akira Tanaka",
+                role: "University of Tokyo, Japan",
+                img: "https://ui-avatars.com/api/?name=Akira+Tanaka&background=C62828&color=fff&size=400",
+                bio: "Prof. Tanaka is a leading figure in semiconductor physics. His team at UTokyo recently developed a novel wide-bandgap semiconductor material that outperforms Gallium Nitride in power efficiency.",
+                abstract: "<b>Topic: Next-Gen Power Semiconductors.</b> Analyzing the defect density in ultra-wide bandgap oxides and their impact on breakdown voltage in high-power switching applications."
+            },
+            's5': {
+                name: "Dr. Sher Singh Meena",
+                role: "BARC, Mumbai",
+                img: "https://ui-avatars.com/api/?name=Sher+Singh&background=FF6F00&color=fff&size=400",
+                bio: "Dr. Meena is an expert in ferrite nanomaterials and Mössbauer spectroscopy. His research on magnetic hyperthermia has opened new avenues for non-invasive cancer treatment using magnetic nanoparticles.",
+                abstract: "<b>Topic: Ferrite Nanoparticles for Biomedical Applications.</b> Focusing on the specific absorption rate (SAR) tuning of spinel ferrites for effective magnetic hyperthermia therapy."
+            },
+            's6': {
+                name: "Dr. Hans Weber",
+                role: "Max Planck Institute, Germany",
+                img: "https://ui-avatars.com/api/?name=Hans+Weber&background=37474F&color=fff&size=400",
+                bio: "Dr. Weber leads the Polymer Interfaces group. His work on conductive polymers has led to the development of highly sensitive, flexible biosensors used in wearable health monitoring devices.",
+                abstract: "<b>Topic: Conductive Polymers in Sensing.</b> Engineering the morphology of PEDOT:PSS thin films to enhance conductivity and stability in ambient environmental conditions."
+            },
+            's7': {
+                name: "Dr. Ravi Shankar",
+                role: "Tata Steel R&D",
+                img: "https://ui-avatars.com/api/?name=Ravi+Shankar&background=4A148C&color=fff&size=400",
+                bio: "With 20 years of industrial experience, Dr. Shankar bridges the gap between academic research and industrial metallurgy. He holds 15 patents in high-strength automotive steel processing.",
+                abstract: "<b>Topic: Advanced High-Strength Steels (AHSS).</b> The challenges of implementing 3rd generation AHSS in automotive manufacturing lines and the role of micro-alloying elements."
+            },
+            's8': {
+                name: "Dr. M. Deepty",
+                role: "SITE, Tadepalligudem",
+                img: "https://ui-avatars.com/api/?name=M+Deepty&background=880E4F&color=fff&size=400",
+                bio: "Professor of Physics and head of the Nanomagnetism Lab at SITE. She mentors doctoral students in the synthesis of multiferroic composites and their characterization using VSM and XRD.",
+                abstract: "<b>Topic: Multiferroic Composites.</b> Investigating the magnetoelectric coupling in BaTiO3-CoFe2O4 core-shell nanostructures for sensor applications."
+            }
+        };
+
+        // Modal Functions
+        const modal = document.getElementById('speakerModal');
+        const m_img = document.getElementById('m_img');
+        const m_name = document.getElementById('m_name');
+        const m_role = document.getElementById('m_role');
+        const m_bio = document.getElementById('m_bio');
+        const m_abstract = document.getElementById('m_abstract');
+
+        function openModal(id) {
+            const data = speakerData[id];
+            if(data) {
+                m_img.src = data.img;
+                m_name.innerText = data.name;
+                m_role.innerText = data.role;
+                m_bio.innerText = data.bio;
+                m_abstract.innerHTML = data.abstract;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(e) {
+            if (e && e.target !== modal && !e.target.closest('.close-modal')) return;
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Filter Functions
+        function filterCategory(cat) {
+            const cards = document.querySelectorAll('.speaker-card');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if(cat === 'all' || card.getAttribute('data-category') === cat) {
+                    card.style.display = 'block';
+                    card.style.animation = 'none';
+                    card.offsetHeight;
+                    card.style.animation = 'fadeInUp 0.5s ease-out';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filterSpeakers() {
+            const query = document.getElementById('searchBox').value.toLowerCase();
+            const cards = document.querySelectorAll('.speaker-card');
+
+            cards.forEach(card => {
+                const name = card.querySelector('.speaker-name').innerText.toLowerCase();
+                const role = card.querySelector('.speaker-title').innerText.toLowerCase();
+                
+                if(name.includes(query) || role.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.speaker-card').forEach((el, index) => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = `all 0.6s ease-out ${index * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
